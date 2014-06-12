@@ -43,9 +43,9 @@ players = [
 ]
 
 player_team_match = []
-TEAM_LENGTH = teams.length
+TEAM_LENGTH = teams.length.to_f
 players.each do |p|
-  (TEAM_LENGTH/players.length.to_f).ceil.times do 
+  (TEAM_LENGTH/players.length).ceil.times do 
     if (teams.length > 0)
       team = teams.sample
       teams_used << team
@@ -75,5 +75,3 @@ player_team_match.each do |p|
   puts "#{p.first[0]} draws #{p.first[1]}!"
   sleep(2)
 end
-
-puts "#{teams.length} teams left"
